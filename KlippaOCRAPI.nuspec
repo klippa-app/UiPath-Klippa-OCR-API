@@ -15,6 +15,7 @@
       <dependency id="Newtonsoft.Json" version="11.0.2" />
     </dependencies>
     <icon>images\icon.jpg</icon>
+    <repository type="git" url="https://github.com/klippa-app/UiPath-Klippa-OCR-API" />
   </metadata>
   <files>
     <file src="KlippaOCRAPI\obj\Release\KlippaOCRAPI.dll" target="lib\KlippaOCRAPI.dll" />
