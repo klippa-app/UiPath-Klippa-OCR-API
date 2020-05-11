@@ -37,7 +37,7 @@ jobs:
       run: |
         cd $Env:GITHUB_WORKSPACE
         nuget pack KlippaOCRAPI.nuspec
-        nuget push *.nupkg
+        nuget push *.nupkg -source https://www.nuget.org/
         
     - uses: actions/upload-artifact@v2
       with:
