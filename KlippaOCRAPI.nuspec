@@ -9,7 +9,7 @@
     <description>A UiPath library to call the Klippa OCR API.</description>
     <releaseNotes></releaseNotes>
     <copyright>Copyright (c) Klippa App BV</copyright>
-    <tags>ocr document parsing invoice receipt</tags>
+    <tags>uipath ocr document parsing invoice receipt</tags>
     <license type="expression">MIT</license>
     <dependencies>
       <dependency id="Newtonsoft.Json" version="11.0.2" />
