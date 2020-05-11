@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Klippa.OCRAPI.Activities</id>
+    <version>1.0.0</version>
+    <authors></authors>
+    <owners></owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A UiPath library to call the Klippa OCR API.</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright (c) Klippa App BV</copyright>
+    <tags>ocr,document,parsing,invoice,receipt</tags>
+    <license type="expression">MIT</license>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version=">=11.02" />
+    </dependencies>
+    <icon>images\icon.png</icon>
+  </metadata>
+  <files>
+	  <file src="[Path to dll or file to include]" target="[Destination directory inside nuget package]"/>
+    <file src="icon.png" target="images\" />
+  </files>
+</package>
