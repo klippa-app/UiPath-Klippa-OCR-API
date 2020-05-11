@@ -51,6 +51,7 @@ jobs:
         cd $Env:GITHUB_WORKSPACE
         nuget pack KlippaOCRAPI.nuspec -Version $Env:HEAD_TAG
         nuget push *.nupkg -source https://www.nuget.org/
+        dotnet nuget push *.nupkg --source "github"
         
     - name: Create Release
       id: create_release
