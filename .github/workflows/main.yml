@@ -36,7 +36,7 @@ jobs:
     - name: Build Project
       run: |
         cd "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\"
-        .\MSBuild.exe $Env:GITHUB_WORKSPACE\KlippaOCRAPI /t:Build /p:Configuration=Release
+        .\MSBuild.exe $Env:GITHUB_WORKSPACE\KlippaOCRAPI /t:Build /p:Configuration=Release /t:pack
 
     - name: Build NuGet
       if: env.HEAD_TAG == '' 
@@ -49,7 +49,7 @@ jobs:
       if: env.HEAD_TAG != '' 
       run: |
         cd $Env:GITHUB_WORKSPACE
-        nuget pack KlippaOCRAPI.nuspec -Version $Env:HEAD_TAG -Deterministic
+        nuget pack KlippaOCRAPI.nuspec -Version $Env:HEAD_TAG
         nuget push *.nupkg -source https://www.nuget.org/
         echo "::set-env name=NUGET_FILE::$(ls | grep -o Klippa.OCRAPI.Activities.*.nupkg)"
         echo "::set-output name=NUGET_FILE::$(ls | grep -o Klippa.OCRAPI.Activities.*.nupkg)"
