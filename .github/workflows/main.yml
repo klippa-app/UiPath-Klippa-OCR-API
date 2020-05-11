@@ -36,7 +36,7 @@ jobs:
     - name: Build Project
       run: |
         cd "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\"
-        .\MSBuild.exe $Env:GITHUB_WORKSPACE\KlippaOCRAPI /t:Build /p:Configuration=Release /t:pack
+        .\MSBuild.exe $Env:GITHUB_WORKSPACE\KlippaOCRAPI /t:Build /p:Configuration=Release
 
     - name: Build NuGet
       if: env.HEAD_TAG == '' 
