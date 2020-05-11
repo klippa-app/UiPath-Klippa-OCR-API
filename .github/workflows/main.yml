@@ -24,6 +24,7 @@ jobs:
 
     - uses: nuget/setup-nuget@v1
       with:
+        nuget-api-key: ${{ secrets.NuGetAPIKey }}
         nuget-version: '5.x'
     - run: nuget restore KlippaOCRAPI.sln
 
