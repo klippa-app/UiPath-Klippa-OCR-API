@@ -12,12 +12,12 @@
     <tags>ocr document parsing invoice receipt</tags>
     <license type="expression">MIT</license>
     <dependencies>
-      <dependency id="Newtonsoft.Json" version=">=11.02" />
+      <dependency id="Newtonsoft.Json" version="11.0.2" />
     </dependencies>
-    <icon>images\icon.png</icon>
+    <icon>images\icon.jpg</icon>
   </metadata>
   <files>
-    <file src="KlippaOCRAPI.dll" target="lib\"/>
-    <file src="icon.png" target="images\" />
+    <file src="lib\KlippaOCRAPI.dll" target="lib\KlippaOCRAPI.dll" />
+    <file src="icon.jpg" target="images\" />
   </files>
 </package>
