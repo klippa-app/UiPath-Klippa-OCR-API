@@ -18,6 +18,7 @@
   </metadata>
   <files>
     <file src="KlippaOCRAPI\obj\Release\KlippaOCRAPI.dll" target="lib\KlippaOCRAPI.dll" />
+    <file src="KlippaOCRAPI\obj\Release\KlippaOCRAPI.pdb" target="lib\KlippaOCRAPI.pdb" />
     <file src="icon.jpg" target="images\" />
   </files>
 </package>
