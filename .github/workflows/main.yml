@@ -33,10 +33,12 @@ jobs:
         cd "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\"
         .\MSBuild.exe $Env:GITHUB_WORKSPACE\KlippaOCRAPI /t:Build /p:Configuration=Release
         
-    - name: Build NuGet
+    - name: Build and push NuGet
       run: |
         cd $Env:GITHUB_WORKSPACE
         nuget pack KlippaOCRAPI.nuspec
+        nuget push *.nupkg
+        
     - uses: actions/upload-artifact@v2
       with:
         name: nuget-package
