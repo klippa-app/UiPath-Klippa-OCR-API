@@ -17,7 +17,7 @@
     <icon>images\icon.jpg</icon>
   </metadata>
   <files>
-    <file src="lib\KlippaOCRAPI.dll" target="lib\KlippaOCRAPI.dll" />
+    <file src="KlippaOCRAPI\obj\Release\KlippaOCRAPI.dll" target="lib\KlippaOCRAPI.dll" />
     <file src="icon.jpg" target="images\" />
   </files>
 </package>
