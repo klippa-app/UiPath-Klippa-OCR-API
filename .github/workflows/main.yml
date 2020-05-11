@@ -49,7 +49,7 @@ jobs:
       if: env.HEAD_TAG != '' 
       run: |
         cd $Env:GITHUB_WORKSPACE
-        nuget pack KlippaOCRAPI.nuspec -Version $Env:HEAD_TAG
+        nuget pack KlippaOCRAPI.nuspec -Version $Env:HEAD_TAG -Deterministic
         nuget push *.nupkg -source https://www.nuget.org/
         echo "::set-env name=NUGET_FILE::$(ls | grep -o Klippa.OCRAPI.Activities.*.nupkg)"
         echo "::set-output name=NUGET_FILE::$(ls | grep -o Klippa.OCRAPI.Activities.*.nupkg)"
