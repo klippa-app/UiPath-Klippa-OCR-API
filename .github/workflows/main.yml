@@ -51,6 +51,8 @@ jobs:
         cd $Env:GITHUB_WORKSPACE
         nuget pack KlippaOCRAPI.nuspec -Version $Env:HEAD_TAG
         nuget push *.nupkg -source https://www.nuget.org/
+        nuget sources add -name "GPR" -Source https://nuget.pkg.github.com/klippa-app/index.json -Username klippa-app -Password ${{ secrets.GITHUB_TOKEN }
+        nuget push *.nupkg -Source "GPR"
         echo "::set-env name=NUGET_FILE::$(ls | grep -o Klippa.OCRAPI.Activities.*.nupkg)"
         echo "::set-output name=NUGET_FILE::$(ls | grep -o Klippa.OCRAPI.Activities.*.nupkg)"
         
