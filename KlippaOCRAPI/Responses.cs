@@ -10,6 +10,9 @@ namespace Klippa.OCRAPI
         [JsonProperty("message")]
         public string Message { get; set; }
 
+        [JsonProperty("errors")]
+        public APIValidationError[] ValidationErrors { get; set; }
+
         [JsonProperty("data")]
         public Data Data { get; set; }
 
@@ -18,6 +21,18 @@ namespace Klippa.OCRAPI
 
         [JsonProperty("result")]
         public string Result { get; set; }
+    }
+
+    public partial class APIValidationError
+    {
+        [JsonProperty("fieldNames")]
+        public string[] FieldNames { get; set; }
+
+        [JsonProperty("classification")]
+        public string Classification { get; set; }
+
+        [JsonProperty("message")]
+        public string Message { get; set; }
     }
 
     public partial class Data
