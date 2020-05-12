@@ -129,17 +129,14 @@ namespace Klippa.OCRAPI.Activities
                 HTTPResponseHeaders.Set(context, response.Headers);
                 RequestSuccesful.Set(context, requestSuccesful);
 
-                if (requestSuccesful)
+                try
                 {
-                    try
-                    {
-                        APIResponse deserializedAPIResponse = JsonConvert.DeserializeObject<APIResponse>(output);
-                        APIResponse.Set(context, deserializedAPIResponse);
-                    }
-                    catch (Exception)
-                    {
+                    APIResponse deserializedAPIResponse = JsonConvert.DeserializeObject<APIResponse>(output);
+                    APIResponse.Set(context, deserializedAPIResponse);
+                }
+                catch (Exception)
+                {
 
-                    }
                 }
             }
             catch (OperationCanceledException)
