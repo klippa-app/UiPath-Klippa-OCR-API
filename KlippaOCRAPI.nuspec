@@ -5,10 +5,9 @@
     <version>1.0.0</version>
     <authors>Klippa</authors>
     <owners>Klippa</owners>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>A UiPath library to call the Klippa OCR API.</description>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>A UiPath library to call the Klippa OCR API using a UiPath Activity. The Klippa OCR API provides real-time document extraction using OCR and Machine Learning, just send us the document and we provide you with the document content in a structured way to automate your document workflow.</description>
     <releaseNotes></releaseNotes>
-    <copyright>Copyright (c) Klippa App BV</copyright>
     <tags>uipath ocr document parsing invoice receipt</tags>
     <license type="expression">MIT</license>
     <dependencies>
