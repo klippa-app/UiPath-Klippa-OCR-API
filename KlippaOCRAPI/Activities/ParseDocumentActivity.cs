@@ -81,15 +81,15 @@ namespace Klippa.OCRAPI.Activities
         public OutArgument<APIResponse> APIResponse { get; set; }
 
         private HttpClient httpClient;
-        private MultipartFormDataContent formData;
-        private FileStream fs;
 
         public ParseDocument()
         {
             BasePath = "https://custom-ocr.klippa.com/api/v1";
             PDFTextExtraction = PDFTextExtractionType.Fast;
-            httpClient = new HttpClient();
-            formData = new MultipartFormDataContent();
+            httpClient = new HttpClient
+            {
+                Timeout = TimeSpan.FromSeconds(600)
+            };
         }
 
         protected override IAsyncResult BeginExecute(AsyncCodeActivityContext context, AsyncCallback callback, object state)
@@ -145,23 +145,18 @@ namespace Klippa.OCRAPI.Activities
             }
             finally
             {
-                if (httpClient != null)
+                if (task.Result != null)
                 {
-                    httpClient.Dispose();
-                }
-                if (formData != null)
-                {
-                    formData.Dispose();
-                }
-                if (fs != null)
-                {
-                    fs.Dispose();
+                    task.Result.Dispose();
                 }
             }
         }
 
         Task<HttpResponseMessage> ExecuteAsync(CodeActivityContext context)
         {
+            MultipartFormDataContent formData = new MultipartFormDataContent();
+            FileStream fs = null;
+
             var basePath = BasePath.Get(context);
             var request = new HttpRequestMessage()
             {
@@ -225,8 +220,7 @@ namespace Klippa.OCRAPI.Activities
             }
 
             request.Content = formData;
-            request.Properties["RequestTimeout"] = TimeSpan.FromSeconds(60);
-            httpClient.Timeout = TimeSpan.FromSeconds(60);
+            request.Properties["RequestTimeout"] = TimeSpan.FromSeconds(600);
 
             return httpClient.SendAsync(request);
         }
