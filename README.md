@@ -1,4 +1,7 @@
 # UiPath-Klippa-OCR-API
+
+:rocket: *Create smart document processes in UiPath using the Klippa OCR API* :rocket:
+
 **The source code of the UiPath Klippa OCR component to do document parsing directly from UiPath.**
 
 ## About Klippa
