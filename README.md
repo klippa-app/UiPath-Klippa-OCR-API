@@ -4,6 +4,10 @@
 
 **The source code of the UiPath Klippa OCR component to do document parsing directly from UiPath.**
 
+## Component usage
+
+You will need an API key to use this component. If you would like to use our API, please contact us [here](https://www.klippa.com/en/ocr/ocr-api).
+
 ## About Klippa
 
 [Klippa](https://www.klippa.com/en) is a scale-up from [Groningen, The Netherlands](https://goo.gl/maps/CcCGaPTBz3u8noSd6) and was founded in 2015 by six Dutch IT specialists with the goal to digitize paper processes with modern technologies.
