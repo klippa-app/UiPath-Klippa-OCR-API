@@ -31,7 +31,7 @@ jobs:
     - run: nuget restore KlippaOCRAPI.sln
 
     - name: Check if Git tag exists
-      run: echo "::set-env name=HEAD_TAG::$(git tag --points-at HEAD)"
+      run: echo "HEAD_TAG=$(git tag --points-at HEAD)" >> $GITHUB_ENV
 
     - name: Build Project
       run: |
@@ -53,7 +53,7 @@ jobs:
         nuget push *.nupkg -source https://www.nuget.org/
         nuget sources add -name "GPR" -Source https://nuget.pkg.github.com/klippa-app/index.json -Username klippa-app -Password ${{ secrets.GITHUB_TOKEN }}
         nuget push *.nupkg -Source "GPR"
-        echo "::set-env name=NUGET_FILE::$(ls | grep -o Klippa.OCRAPI.Activities.*.nupkg)"
+        echo "NUGET_FILE=$(ls | grep -o Klippa.OCRAPI.Activities.*.nupkg)" >> $GITHUB_ENV
         echo "::set-output name=NUGET_FILE::$(ls | grep -o Klippa.OCRAPI.Activities.*.nupkg)"
         
     - name: Create Release
